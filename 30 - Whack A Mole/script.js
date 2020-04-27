@@ -40,8 +40,13 @@ function startGame() {
   scoreBoard.textContent = 0; //reseting the scoreBoard
   timeUp = false;
   score = 0;
+  button.style.visibility = 'hidden';
   peep();
-  setTimeout(() => (timeUp = true), 10000); //setting timeUp variable to true after 10 seconds
+  setTimeout(() => {
+    timeUp = true;
+    button.innerHTML = 'Try again?';
+    button.style.visibility = 'visible';
+  }, 10000); //setting timeUp variable to true after 10 seconds, and adding button action
 }
 
 function bonk(e) {
